@@ -470,9 +470,10 @@ function App() {
 
 
   return (<div className="App" >
-    <Navibar />
+    {/* <Navibar /> */}
     <DaeMoon />
     <main>
+      <div>
       <br />
       {/* 사용자 입력(출발지와 도착지 받음) */}
       <UserInput start={start}
@@ -483,8 +484,7 @@ function App() {
       />
 
       {/* 예상도착시간 */}
-      <div>
-      {/* 수정한 부분 1202/0244 */}
+
       {trafficLoading ? <Loading/> : 
         <GetMultiTraffic
           dataSumList={dataSumList}
@@ -495,7 +495,6 @@ function App() {
         ></GetMultiTraffic>
       }
       
-    </div>
       <br />
 
       {/* 휴게소 메뉴 */}
@@ -533,7 +532,7 @@ function App() {
         sortMessage={sortMessage}
         sortBy={sortBy}
       ></Message>
-
+      </div>
     </main>
 
     <Footer />

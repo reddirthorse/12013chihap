@@ -4,7 +4,6 @@ import './CSS/Message.css'
 import { FaAngleDoubleLeft } from "react-icons/fa";
 import { FaAngleDoubleRight } from "react-icons/fa";  // Font Awesome에서 아이콘 가져오기
 
-
 const Message = ({ msg, prevPage, nextPage, pageSize_h, pageNo_h, nextTen, prevTen, sortMessage, sortBy }) => {
 
   // 캐러셀 컬러 변경함수
@@ -19,9 +18,9 @@ const Message = ({ msg, prevPage, nextPage, pageSize_h, pageNo_h, nextTen, prevT
         backColor = (
           <img
             className="w-100 d-block"
-            src="img/event.png"
+            src="event.png"
             alt="slide"
-            style={{ opacity: '0.5', objectFit: 'cover' }}
+            style={{ objectFit: 'fill', overflow: 'hidden'}}
           />
         )
         break;
@@ -33,9 +32,9 @@ const Message = ({ msg, prevPage, nextPage, pageSize_h, pageNo_h, nextTen, prevT
         backColor = (
           <img
             className="w-100 d-block"
-            src="img/weather.png"
+            src="weather.png"
             alt="slide"
-            style={{ opacity: '0.5', objectFit: 'cover' }}
+            style={{ objectFit: 'fill', overflow: 'hidden' }}
           />
         )
         break;
@@ -45,9 +44,9 @@ const Message = ({ msg, prevPage, nextPage, pageSize_h, pageNo_h, nextTen, prevT
         backColor = (
           <img
             className="w-100 d-block"
-            src="img/warning.png"
+            src="warning.png"
             alt="slide"
-            style={{ opacity: '0.3', objectFit: 'cover' }}
+            style={{ objectFit: 'fill' }}
           />
         )
     }
@@ -74,7 +73,6 @@ const Message = ({ msg, prevPage, nextPage, pageSize_h, pageNo_h, nextTen, prevT
   // 캐러셀 본체
   const CarouselUI = msg.map((m, index) => {
     return (
-
       <Carousel.Item key={index}>
         {imgColor(index)}
         <Carousel.Caption>
@@ -150,11 +148,11 @@ const Message = ({ msg, prevPage, nextPage, pageSize_h, pageNo_h, nextTen, prevT
   // 전체 틀
   return (
     <div className="col-md-12">
-      <div className="main_container row col-md-12">
+      <div className="main_container row col-md-12" style={{objectFit: 'fill'}}>
         <div className="direction_message">
-          실시간 문자정보 현황
+          실시간 문자정보 시스템
         </div>
-        <Carousel className="col-md-6">
+        <Carousel className="col-md-6" style={{margin: '-12px', marginTop: '0px', marginBottom: '0px'}}>
           {CarouselUI}
         </Carousel>
 

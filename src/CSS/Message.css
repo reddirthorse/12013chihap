@@ -5,7 +5,8 @@
 }
 
 .direction_message {
-    background: gray;
+    background: #ff5200;
+    opacity: 0.8;
     padding: 10px;
     font-size: 1.3em;
     font-weight: bold;

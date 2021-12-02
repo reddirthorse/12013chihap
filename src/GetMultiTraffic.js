@@ -95,7 +95,7 @@ const GetMultiTraffic = (props) => {
             {/* <strong className="d-inline-block mb-2 text-success">출발 : {props.startCity}</strong>
         <div className = 'endCity'>도착 : {props.endCity}</div> */}
             <div className="row">
-                <div className="col border" style={{ fontSize: "1.2em", fontWeight: "bold" }}>
+                <div className="col rounded overflow-hidden shadow-sm" style={{ fontSize: "1.2em", fontWeight: "bold" }}>
                     <div className="row">
                         <p className="text-center fs-1 text-muted">{props.start}</p>
                     </div>
@@ -109,8 +109,8 @@ const GetMultiTraffic = (props) => {
                     </div>
                 </div>
                     <div className="col-8">
-                        <div className="row border">
-                            <div className="col">
+                        <div className="row">
+                            <div className="col rounded overflow-hidden shadow-sm">
 
                                 <div className="Traffic-area">
                                     <p className="text-center fs-1" style={{ fontSize: "1.2em", fontWeight: "bold" }}>실시간 평균 예상 시간</p>
@@ -120,22 +120,22 @@ const GetMultiTraffic = (props) => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col">
+                            <div className="col rounded overflow-hidden shadow-sm">
                                 <p className="text-center fs-4 text-muted">실시간 최대 예상 시간</p>
                                 <p className="text-center fs-4 fw-bold" style={{ color: "#0DCAF0" }}>{timeCal(dataSumList[1])}</p>
                             </div>
-                            <div className="col">
+                            <div className="col rounded overflow-hidden shadow-sm">
                                 <p className="text-center fs-4 text-muted">실시간 최소 예상 시간</p>
                                 <p className="text-center fs-4 fw-bold" style={{ color: "#0DCAF0" }}>{timeCal(dataSumList[2])}</p>
                             </div>
                         </div>
                     </div>
 
-                <div className="col border">
+                <div className="col rounded overflow-hidden shadow-sm">
                     <p className="text-start text-muted fs-6"> ＊ 도로교통공사 Open API를 사용하여 실시간으로 시간을 측정합니다.</p>
                     <p className="text-start text-muted fs-6"> ＊ API가 실시간으로 업데이트 되기 때문에 공사 측의 누락으로 데이터 누락이 발생할 수 있습니다.</p>
                     <p className="text-start text-muted fs-6"> ＊ 누락 데이터 발생시 네이버 예상시간으로 대체합니다.</p>
-                    <p>&nbsp;</p>
+                    
                     <p className="text-center text-muted fs-6">좋은 여행 되세요 &nbsp;<FaLocationArrow /></p>
                 </div>
             </div>

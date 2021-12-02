@@ -1,5 +1,5 @@
 .traffic-container {
-  margin: auto;
+  margin: 0 auto;
   border: 2px solid gainsboro;
   border-radius: 3px;
   margin-top: 30px;
@@ -12,5 +12,4 @@
 
 .Traffic-area {
   color: gray;
-
 }
