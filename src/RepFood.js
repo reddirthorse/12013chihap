@@ -24,7 +24,8 @@ const RepFood = (props) => {
     infinite: true, // 슬라이드 반복 여부
     speed: 500, // 페이지 넘기는 속도
     slidesToShow: 4, // 한페이지에 보이는 객체 수
-    slidesToScroll: 4, // 스크롤시 넘어가는 객체 수
+    slidesToScroll: 1, // 스크롤시 넘어가는 객체 수
+    autoplaySpeed: 2000, // 스크롤 넘어가는 속도
     arrows: false, // 넘기는 화살표
     autoplay: true, // 페이지 자동 이동
     responsive: [ // 반응형 설정
@@ -32,21 +33,18 @@ const RepFood = (props) => {
         breakpoint: 1300,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3
         }
       },
       {
         breakpoint: 980,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2
         }
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
         }
       }
     ]
@@ -81,7 +79,7 @@ const RepFood = (props) => {
   return (
     <div className="main-container">
       {/* 상단 방향 표시 부분 */}
-      <div className="direction"> 
+      <div className="direction">
         {data[0].routeName}({direction}방면) 휴게소 대표메뉴
       </div>
       {/* 슬라이드 구현 부분 */}
