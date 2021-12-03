@@ -7,27 +7,10 @@ function Navibar() {
     <Navbar bg="dark" variant="dark">
       <Container>
         <Navbar.Brand href="/">
-          <img className="App-logo"
-            alt=""
-            src="/logo192.png"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-          />{''}
 
-          리액트
+          &nbsp; 고속도로 여행 편의 시스템
         </Navbar.Brand>
-        <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#link">코로나 현황보기</Nav.Link>
-        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-        </NavDropdown>
-      </Nav>
+
       </Container>
     </Navbar>
   )
@@ -37,10 +20,10 @@ function DaeMoon() {
   return (
     <div className='daeMoon'>
       <Container>
-        <h1> All great ideas come from walking. </h1>
-        <p>
+        {/* <h1> All great ideas come from walking. </h1> */}
+        {/* <p>
           F. Nietzsche
-        </p>
+        </p> */}
       </Container>
     </div>
 

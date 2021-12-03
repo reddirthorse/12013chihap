@@ -9,41 +9,40 @@ function UserInput(props) {
   let 글자색 = ['info', 'info', 'info', 'info', 'info']
   let [idx, setIdx] = useState(2)
   let [idxEnd, setIdxEnd] = useState(0)
-  
+
   const selectStart = props.start; // 초기값 서울
   const selectEnd = props.end;     // 초기값 부산
 
-  
-// 출발지가 선택될때마다 도착지의 드롭다운 메뉴가 갱신
-useEffect( () => {
-  dropdownMenuUpdate()
-}, [selectStart])
+
+  // 출발지가 선택될때마다 도착지의 드롭다운 메뉴가 갱신
+  useEffect(() => {
+    dropdownMenuUpdate()
+  }, [selectStart])
 
 
-// 도착지 드롭다운 메뉴 갱신 함수
-function dropdownMenuUpdate() {
-  const obj = (
-    광역시.map( (글, i) => {
-                
-      if ( selectEnd === 글 || selectStart === 글 ) {
-        console.log(selectStart, selectEnd)
-        return ;
-      } else {
-        return (
-          <Dropdown.Item key={i}
-            as="button"
-            onClick={() => {
-              props.setEnd(글);
-              setIdxEnd(i)
-            }}>
-            {글} </Dropdown.Item>
-        )
-      }
-    })
-  )
-  return obj;
-  
-}
+  // 도착지 드롭다운 메뉴 갱신 함수
+  function dropdownMenuUpdate() {
+    const obj = (
+      광역시.map((글, i) => {
+
+        if (selectEnd === 글 || selectStart === 글) {
+          return;
+        } else {
+          return (
+            <Dropdown.Item key={i}
+              as="button"
+              onClick={() => {
+                props.setEnd(글);
+                setIdxEnd(i)
+              }}>
+              {글} </Dropdown.Item>
+          )
+        }
+      })
+    )
+    return obj;
+
+  }
 
   // gjgj
 
@@ -57,16 +56,16 @@ function dropdownMenuUpdate() {
 
         <div className="col-md-4 d-none d-md-block border rounded overflow-hidden shadow-sm" >
           <div className='card col-md-12' >
-            {/* <img src={require("./image/" + (props.start) + "배경.jpg").default} style={{ height: '200px', opacity: 0.9 }}/> */}
+            <img src={require("./image/" + (props.start) + "배경.jpg").default} style={{ height: '200px', opacity: 0.9 }} />
             <div className="card-img-overlay" >
               <DropdownButton id="dropdown-item-button"
                 title="출발지 선택"
                 size="sm"
                 variant="secondary" >
-                {광역시.map( (글, i) => { // 배열 수 만큼 반복하되, 출발지로 선택된 도시는 제외
+                {광역시.map((글, i) => { // 배열 수 만큼 반복하되, 출발지로 선택된 도시는 제외
 
-                  if( selectStart === 글 ) {
-                    return ;
+                  if (selectStart === 글) {
+                    return;
                   } else {
                     return (
                       <Dropdown.Item key={i}
@@ -92,13 +91,13 @@ function dropdownMenuUpdate() {
 
         <div className="col-md-4 d-none d-md-block border rounded overflow-hidden shadow-sm" >
           <div className='card col-md-12'>
-            {/* <img src={require("./image/" + (props.도착지) + "배경.jpg").default} style={{ height: '200px', opacity: 0.9 }} /> */}
+            <img src={require("./image/" + (props.end) + "배경.jpg").default} style={{ height: '200px', opacity: 0.9 }} />
             <div className="card-img-overlay" >
               <DropdownButton id="dropdown-item-button"
                 title="도착지 선택"
                 size="sm"
                 variant="secondary" >
-                  {dropdownMenuUpdate()} {/* 선택돼있는 도착지와 출발지로 선택된 도시 드롭다운메뉴에서 제거 */}
+                {dropdownMenuUpdate()} {/* 선택돼있는 도착지와 출발지로 선택된 도시 드롭다운메뉴에서 제거 */}
               </DropdownButton>
               <hr />
               <strong className={"d-inline-block mb-2 text-" + (글자색[idxEnd])} > <h1> <b> {props.end} </b>
