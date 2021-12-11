@@ -452,6 +452,11 @@ function App() {
           }
         }
       }
+      for (let i = 1; i < tempDataList.length; i++){
+        if (tempDataList[i].startUnitCode ===tempDataList[i-1].startUnitCode && tempDataList[i].endUnitCode ===tempDataList[i-1].endUnitCode){
+          tempDataList.splice(i,1);
+        }
+      }
       for (let i = 0; i < startList.code.length; i++) {
         tempCityList.push({ 'sCity': startList.name[i], 'eCity': endList.name[i], 'route': startList.route })
       }

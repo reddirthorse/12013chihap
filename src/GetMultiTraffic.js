@@ -6,6 +6,7 @@ import { FaCar, FaLocationArrow } from 'react-icons/fa'
 const GetMultiTraffic = (props) => {
     //수정한 부분 1202/0246
     const { dataSumList, detail, cityList } = props
+    console.log(props)
 
 
     function timeCal(t) {
@@ -24,7 +25,7 @@ const GetMultiTraffic = (props) => {
     //수정한 부분 12/02/11:53
     const nullCheck = (detail) => {
         for (let i = 0; i < detail.length; i++) {
-            if (detail.timeAvg === '-1') {
+            if (detail[i].timeAvg === '-1') {
                 return '-1'
             }
         }
@@ -32,11 +33,11 @@ const GetMultiTraffic = (props) => {
     }
 
     //수정한부분 useeffect 삭제 12/02/02:47
-    console.log(cityList.length);
-    console.log(detail.length)
+
 
     //중간 경로 누락 발생 시 누락 경고
-    if (nullCheck === '-1') {
+    //수정한 부분 누락발생 로직 변경(detail과 citylist 길이 비교 작제)
+    if (detail.length !== cityList.length || nullCheck === '-1') {
         return (
             <div className="traffic-container">
 
