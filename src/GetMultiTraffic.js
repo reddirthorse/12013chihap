@@ -32,9 +32,11 @@ const GetMultiTraffic = (props) => {
     }
 
     //수정한부분 useeffect 삭제 12/02/02:47
+    console.log(cityList.length);
+    console.log(detail.length)
 
     //중간 경로 누락 발생 시 누락 경고
-    if (cityList.length !== detail.length || nullCheck === '-1') {
+    if (nullCheck === '-1') {
         return (
             <div className="traffic-container">
 
